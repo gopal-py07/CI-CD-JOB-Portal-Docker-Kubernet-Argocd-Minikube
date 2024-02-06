@@ -1,9 +1,12 @@
 version: '3.8'
 services:
-   web:
-       build: .
-       container_name: lnx_jobadda_prj_latest
-       image: gopalghule05/lnx_jobadda_prj:latest
-       command: python3 manage.py runserver 0.0.0.0:8000
-       ports:
-           - 8000:8000
+  web:
+    build:
+      context: .
+      args:
+        TAG: ${GITHUB_RUN_NUMBER}
+    container_name: lnx_job-adda_prj_argocd-gitworkflow
+    image: gopalghule05/lnx_job_adda_argocd:${GITHUB_RUN_NUMBER}
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000

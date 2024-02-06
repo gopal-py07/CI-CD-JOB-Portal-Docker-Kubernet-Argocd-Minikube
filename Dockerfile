@@ -20,5 +20,7 @@ WORKDIR /JobAdda_APPlication
 ADD . /JobAdda_APPlication
 
 RUN pip install --no-cache-dir -r requirements.txt
+ARG TAG
+ENV TAG=${TAG}
 
 # CMD ["python", "manage.py" ,"runserver 0.0.0.0:8000" ]

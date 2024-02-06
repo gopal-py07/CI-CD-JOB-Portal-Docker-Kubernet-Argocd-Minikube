@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-backend-job-adda-app1
+  name: django-backend-job-adda
   labels:
-    app: django-backend-job-adda-quiz-app1
+    app: django-backend-job-adda
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: django-backend-job-adda-app1
+      app: django-backend-job-adda
   template:
     metadata:
       labels:
-        app: django-backend-job-adda-app1
+        app: django-backend-job-adda
     spec:
       containers:
       - name: django-job-adda-kube
         imagePullPolicy: Always
-        image: gopalghule05/lnx_jobadda_prj:latest
+        image: gopalghule05/lnx_job_adda_argocd:latest
         command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
         ports:
         - containerPort: 8000
