@@ -21,3 +21,9 @@ spec:
         command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
         ports:
         - containerPort: 8000
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  revisionHistoryLimit: 5
