@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: job-app-demo
+  namespace: job-portal
+spec:
+  destination:
+    namespace: job-adda-app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: ./
+    repoURL: https://github.com/gopal-py07/CI-CD-JOB-Portal-Docker-Kubernet-Argocd-Minikube.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true

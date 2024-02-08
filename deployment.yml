@@ -4,6 +4,7 @@ metadata:
   name: django-backend-job-adda
   labels:
     app: django-backend-job-adda
+  namespace: job-portal
 spec:
   replicas: 1
   selector:
