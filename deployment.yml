@@ -6,7 +6,7 @@ metadata:
     app: django-backend-job-adda
   namespace: job-portal
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: django-backend-job-adda
