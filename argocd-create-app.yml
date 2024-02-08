@@ -5,7 +5,7 @@ metadata:
   namespace: job-portal
 spec:
   destination:
-    namespace: job-adda-app
+    namespace: job-portal
     server: https://kubernetes.default.svc
   project: default
   source:
