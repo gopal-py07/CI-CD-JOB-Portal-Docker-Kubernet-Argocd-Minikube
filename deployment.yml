@@ -18,7 +18,7 @@ spec:
       containers:
       - name: django-job-adda-kube
         imagePullPolicy: Always
-        image: gopalghule05/lnx_job_adda_argocd:7
+        image: gopalghule05/lnx_job_adda_argocd:8
         command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
         ports:
         - containerPort: 8000
